@@ -1,0 +1,116 @@
+skillId	allow	*skill
+8	1	Inner Sight
+12	1	Multiple Shot
+17	1	Slow Missiles
+20	1	Lightning Bolt
+21	1	Freezing Arrow
+31	1	Glacial Orb Arrow
+32	1	Valkyrie
+35	1	Lightning Fury
+36	1	Fire Bolt
+38	1	Charged Bolt
+39	1	Ice Bolt
+40	1	Frozen Armor
+42	1	Static Field
+44	1	Frost Nova
+45	1	Ice Blast
+46	1	Blaze
+47	1	Fire Ball
+48	1	Nova
+49	1	Lightning
+50	1	Shiver Armor
+51	1	Fire Wall
+52	1	Enchant
+53	1	Chain Lightning
+54	1	Teleport
+55	1	Glacial Spike
+56	1	Meteor
+57	1	Thunder Storm
+58	1	Energy Shield
+59	1	Blizzard
+60	1	Chilling Armor
+62	1	Hydra
+64	1	Frozen Orb
+66	1	Amplify Damage
+67	1	Teeth
+68	1	Bone Armor
+71	1	Dim Vision
+72	1	Weaken
+76	1	Iron Maiden
+77	1	Terror
+78	1	Bone Wall
+81	1	Corpse Field
+82	1	Life Tap
+83	1	Poison Explosion
+84	1	Bone Spear
+86	1	Attract
+87	1	Decrepify
+88	1	Bone Prison
+91	1	Lower Resist
+92	1	Poison Nova
+93	1	Bone Spirit
+95	1	Revive
+101	1	Holy Bolt
+112	1	Blessed Hammer
+121	1	Fist of the Heavens
+130	1	Howl
+137	1	Taunt
+138	1	Shout
+139	1	Stun
+146	1	Battle Cry
+149	1	Battle Orders
+150	1	Korlics Fury
+154	1	War Cry
+155	1	Battle Command
+221	1	Raven
+225	1	Firestorm
+229	1	Molten Boulder
+234	1	Eruption
+235	1	Cyclone Armor
+238	1	Rabies
+240	1	Twister
+243	1	Shock Wave
+244	1	Volcano
+245	1	Tornado
+249	1	Armageddon
+250	1	Hurricane
+257	1	Blade Sentinel
+258	1	Quickness
+264	1	Snowlash Sentry
+267	1	Fade
+273	1	Glacial Burst Sentry
+277	1	Blade Shield
+278	1	Venom
+350	1	Delerium Change
+371	1	Mark of the Bear
+372	1	Mark of the Wolf
+385	1	Hex Bane
+387	1	Psychic Ward
+389	1	Hex Purge
+393	1	Sigil Lethargy
+394	1	Ring of Fire
+398	1	Flame Wave
+399	1	Miasma Chains
+400	1	Sigil Death
+401	1	Apocalypse
+430	1	proc_SplashDamage
+431	1	proc_SplashDamage_Two
+432	1	proc_SplashDamage_Three
+433	1	proc_SplashDamage_Four
+434	1	proc_SplashDamage_Five
+463	1	Winters Pulse
+465	1	King's Charisma
+466	1	Empowering Flame
+467	1	Storm Shard
+468	1	Storm Pulse
+469	1	Blightburst
+470	1	Spine Piercer
+471	1	Star of Bethlehem
+472	1	Hailstorm
+473	1	Infernal Orb
+474	1	Cinderstorm
+475	1	Starfall
+476	1	Comet
+477	1	Scorchveil
+478	1	Arc
+479	1	Dust Devils

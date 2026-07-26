@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "name": "Auto-Collect Player Corpse",
+  "description": "Prevents corpse creation so items remain equipped after respawning. Gold loss is unchanged.",
+  "patches": [
+    {
+      "description": "Skip corpse creation in the direct dead-mode handler",
+      "op": "nop",
+      "rva": "0x42A689",
+      "size": 5,
+      "expected": "E8 82 1A 00 00"
+    },
+    {
+      "description": "Skip corpse creation in the alternate player-death path",
+      "op": "nop",
+      "rva": "0x42E24E",
+      "size": 5,
+      "expected": "E8 BD DE FF FF"
+    }
+  ]
+}

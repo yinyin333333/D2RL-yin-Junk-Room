@@ -1,0 +1,24 @@
+# Stationary Stat-based Auto Gold Pickup no-log release
+# Restart the game after changing this file.
+#
+# The selected player stat is mapped linearly to the client AutoGold radius.
+# The verified local-server ceiling remains 50.
+
+[stat-gold-pickup]
+stat-name = "item_goldbonus"
+stat-id = 79
+stat-layer = 0
+stat-shift = 0
+
+stat-value-min = 0
+stat-value-max = 500
+range-percent-min = 8
+range-percent-max = 50
+
+update-interval-ms = 100
+
+# These values affect only neutral and casting modes. Walking and running keep
+# the original AutoGold delays and action path.
+stationary-just-dropped-delay-ms = 150
+stationary-default-delay-ms = 50
+direct-pickup-retry-cooldown-ms = 150

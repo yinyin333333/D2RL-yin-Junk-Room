@@ -1,0 +1,3 @@
+plugins
+d2rloader\plugins\BindAndSummon.dll
+d2rloader\config\bindandsummon.toml

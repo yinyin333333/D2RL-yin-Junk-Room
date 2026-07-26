@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "name": "Increase Floor Item Label Cap to 64",
+  "description": "Expands floor-item display candidate buffer from 32 to 64 entries",
+  "patches": [
+    {
+      "description": "Raise the floor-item display candidate capacity comparison from 32 to 64",
+      "op": "write-u8",
+      "rva": "0x1516EC1",
+      "value": "0x40",
+      "expected": "20"
+    },
+    {
+      "description": "Move the 0x144-byte entry-buffer truncation endpoint from 32 entries (0x2880) to 64 entries (0x5100)",
+      "op": "write-u32",
+      "rva": "0x1516ED1",
+      "value": "0x00005100",
+      "expected": "80 28 00 00"
+    },
+    {
+      "description": "Grow the floor-item display candidate buffer to 64 entries instead of 32",
+      "op": "write-u32",
+      "rva": "0x1516F43",
+      "value": "0x00000040",
+      "expected": "20 00 00 00"
+    }
+  ]
+}

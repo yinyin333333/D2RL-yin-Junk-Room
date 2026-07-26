@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Monsters Use Area Level on Normal",
+  "description": "Allows the current expansion monster-level path to use the Levels.txt area level when the effective difficulty index is Normal, while retaining the existing classic-game, noRatio, boss, desecrate, and monster-region adjustment checks.",
+  "patches": [
+    {
+      "description": "Do not skip the area-level eligibility checks when the difficulty index is Normal",
+      "op": "nop",
+      "rva": "0x543D35",
+      "size": 2,
+      "expected": "74 19"
+    }
+  ]
+}

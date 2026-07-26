@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Make Energy Shield not disable on 0 mana",
+  "description": "Keeps Energy Shield active at zero mana by always bypassing the final aura-state removal block after mana and absorbed damage have been updated.",
+  "patches": [
+    {
+      "description": "Always skip the zero-mana Energy Shield state-removal block",
+      "op": "write-u8",
+      "rva": "0x552734",
+      "value": "0xEB",
+      "expected": "7F"
+    }
+  ]
+}

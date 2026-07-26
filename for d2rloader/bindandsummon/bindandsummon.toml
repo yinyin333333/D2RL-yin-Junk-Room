@@ -1,0 +1,13 @@
+# Bind And Summon
+# Restart the game after changing these options.
+
+[bindandsummon]
+
+# Save and restore more than one Bind Demon.
+bind-demon-multiple = true
+
+# Allow classes other than Warlock (class ID 7) to save Bind Demon.
+bind-demon-all-classes = true
+
+# Save and restore Necromancer summons, including OSkills used by other classes.
+necromancer-summon-persistence = true
