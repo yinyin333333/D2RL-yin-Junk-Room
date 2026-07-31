@@ -9,5 +9,24 @@ bind-demon-multiple = true
 # Allow classes other than Warlock (class ID 7) to save Bind Demon.
 bind-demon-all-classes = true
 
-# Save and restore Necromancer summons, including OSkills used by other classes.
+# Save and restore summons owned by Necromancer characters.
 necromancer-summon-persistence = true
+
+# Save and restore summons owned by each player class. The pet type itself is
+# discovered from the active game's pettype table rather than a fixed list.
+amazon-summon-persistence = false
+sorceress-summon-persistence = false
+paladin-summon-persistence = false
+barbarian-summon-persistence = false
+druid-summon-persistence = false
+assassin-summon-persistence = false
+warlock-summon-persistence = false
+
+# Covers unknown mod-defined player classes whose numeric class ID is not
+# listed above, plus owned summon skills whose Skills.txt CharClass is blank
+# or differs from the owning player's class.
+oskill-nonclass-summon-persistence = true
+
+# Allow Raise Skeleton and Raise Skeletal Mage to work without a corpse.
+# False keeps the original corpse requirement.
+corpse-free-skeleton-summon = false
