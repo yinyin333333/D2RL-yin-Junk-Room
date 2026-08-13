@@ -1,0 +1,9 @@
+# FindItem
+# Restart the game after changing these options.
+
+[finditem]
+enabled = true
+
+# Radius in path-coordinate units (subtiles), not large level tiles.
+# Five units are approximately one large level tile. Allowed range: 1..100.
+radius = 25

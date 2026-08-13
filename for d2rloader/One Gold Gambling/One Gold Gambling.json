@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "name": "One Gold Gambling",
+  "description": "Sets all gambling purchase prices to 1 gold without changing other vendor transactions.",
+  "patches": [
+    {
+      "description": "Route the zero-discount gambling path through the final one-gold assignment",
+      "op": "bytes",
+      "rva": "0x36F268",
+      "bytes": "0F 84 AF 00 00 00",
+      "expected": "0F 84 B2 00 00 00"
+    },
+    {
+      "description": "Replace the calculated gambling price with one gold before the normal register restore",
+      "op": "bytes",
+      "rva": "0x36F31D",
+      "bytes": "B8 01 00 00 00 90",
+      "expected": "44 2B C2 41 8B C0"
+    },
+    {
+      "description": "Replace the legacy-format gambling base price with one gold before the normal register restore",
+      "op": "bytes",
+      "rva": "0x36F384",
+      "bytes": "B8 01 00 00 00 90",
+      "expected": "8B 80 DC 00 00 00"
+    }
+  ]
+}

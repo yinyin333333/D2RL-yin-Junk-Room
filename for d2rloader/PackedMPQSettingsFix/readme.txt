@@ -1,0 +1,2 @@
+plugins
+d2rloader\plugins\PackedMPQSettingsFix.dll
