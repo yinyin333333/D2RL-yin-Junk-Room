@@ -1,0 +1,10 @@
+schema_version = 1
+
+# Red Portal destination level ID = allowed origin act.
+# Act indexes: 0 = Act I, 1 = Act II, 2 = Act III, 3 = Act IV, 4 = Act V.
+# Restart the game after changing this file.
+# Destinations not listed here are unrestricted.
+
+[red_portal_origin_acts]
+# 39 = 4
+# 137 = 2
