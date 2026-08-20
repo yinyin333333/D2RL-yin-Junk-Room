@@ -1,7 +1,7 @@
 {
   "version": 1,
   "name": "Aura In Either Skill Slot (Single Active Aura)",
-  "description": "Allows the engine aura lifecycle and periodic aura tick to follow an aura selected in either the left or right skill slot. When an aura is selected on the side that currently holds a combat skill while the opposite side holds an aura, the displaced combat skill is moved into the previous aura slot and the newly selected aura takes its requested side. The swap uses the original selected-skill setter and preserves the skill's owner item. If the displaced skill is not permitted on the opposite side, the aura change is reverted instead of forcing the default Attack skill. The Paladin aura widget follows the active side. Aura rows still require leftskill=1 in Skills data to be assignable to the left slot.",
+  "description": "Aura In Either Skill Slot (Single Active Aura)",
   "patches": [
     {
       "description": "Route the selected-skill side split through a cave that preserves the previous left skill just as the original code preserves the previous right skill",
@@ -51,6 +51,34 @@
       "rva": "0x0A5B00",
       "bytes": "53 57 48 83 EC 28 48 8B D9 E8 32 4A 2A 00 48 8B F8 48 85 C0 74 42 48 8B CF E8 62 85 29 00 89 44 24 20 48 8B CB E8 B6 45 2A 00 8B 54 24 20 0F B6 C8 E8 5A 1C FF FF 48 85 C0 74 1D F6 40 24 20 74 17 0F BF 90 A0 00 00 00 85 D2 78 0C 48 8B CB E8 5C F6 28 00 85 C0 75 0A 48 8B CB E8 A0 58 2A 00 EB 03 48 8B C7 48 83 C4 28 5F 5B C3",
       "expected": "CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC"
+    },
+    {
+      "description": "Route controller binding side selection through an aura-aware resolver",
+      "op": "bytes",
+      "rva": "0x2389C0",
+      "bytes": "E9 AB D1 E6 FF 90 90 90 90 90 90 90 90 90",
+      "expected": "0F B6 40 27 84 05 1E 0D B6 01 40 0F 95 C6"
+    },
+    {
+      "description": "Keep controller auras on the right selected-skill side while using the original leftskill rule for non-aura skills",
+      "op": "bytes",
+      "rva": "0x0A5B70",
+      "bytes": "F6 40 24 20 75 0A F6 40 27 40 40 0F 95 C6 EB 03 40 32 F6 E9 46 2E 19 00",
+      "expected": "CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC"
+    },
+    {
+      "description": "Route controller toggle-skill synchronization through the incoming selected-skill side instead of assuming the right slot",
+      "op": "jmp-rel32",
+      "rva": "0x12BBD7",
+      "targetRva": "0x0A5B90",
+      "expected": "45 8B C6 33 D2"
+    },
+    {
+      "description": "Pass the synchronized side byte to the controller binding validator and resume the original validation call",
+      "op": "bytes",
+      "rva": "0x0A5B90",
+      "bytes": "45 8B C6 0F B6 53 06 E9 40 60 08 00",
+      "expected": "CC CC CC CC CC CC CC CC CC CC CC CC"
     }
   ]
 }
