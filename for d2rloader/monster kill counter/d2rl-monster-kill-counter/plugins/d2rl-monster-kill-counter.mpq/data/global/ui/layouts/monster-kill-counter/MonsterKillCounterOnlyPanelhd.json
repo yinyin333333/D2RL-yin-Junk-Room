@@ -1,0 +1,1884 @@
+{
+    "type":  "Panel",
+    "name":  "monster-kill-counter/MonsterKillCounterOnlyPanel",
+    "fields":  {
+                   "priority":  9003,
+                   "anchor":  {
+                                  "x":  0.5,
+                                  "y":  0.397
+                              },
+                   "rect":  {
+                                "x":  -660,
+                                "y":  -651,
+                                "width":  1320,
+                                "height":  1507
+                            },
+                   "defaultWidget":  "CloseButton"
+               },
+    "children":  [
+                     {
+                         "type":  "ImageWidget",
+                         "name":  "Frame",
+                         "fields":  {
+                                        "rect":  {
+                                                     "x":  0,
+                                                     "y":  0,
+                                                     "width":  1320,
+                                                     "height":  1507
+                                                 },
+                                        "filename":  "d2rloader/monster-kill-counter/panel"
+                                    }
+                     },
+                     {
+                         "type":  "ClickCatcherWidget",
+                         "name":  "PanelInputCatcherMain",
+                         "fields":  {
+                                        "rect":  {
+                                                     "x":  0,
+                                                     "y":  0,
+                                                     "width":  1216,
+                                                     "height":  1507
+                                                 }
+                                    }
+                     },
+                     {
+                         "type":  "ClickCatcherWidget",
+                         "name":  "PanelInputCatcherTopRight",
+                         "fields":  {
+                                        "rect":  {
+                                                     "x":  1216,
+                                                     "y":  0,
+                                                     "width":  104,
+                                                     "height":  106
+                                                 }
+                                    }
+                     },
+                     {
+                         "type":  "ClickCatcherWidget",
+                         "name":  "PanelInputCatcherRight",
+                         "fields":  {
+                                        "rect":  {
+                                                     "x":  1242,
+                                                     "y":  106,
+                                                     "width":  78,
+                                                     "height":  1401
+                                                 }
+                                    }
+                     },
+                     {
+                         "type":  "ClickCatcherWidget",
+                         "name":  "PanelInputCatcherScrollRail",
+                         "fields":  {
+                                        "rect":  {
+                                                     "x":  1216,
+                                                     "y":  106,
+                                                     "width":  26,
+                                                     "height":  1264
+                                                 }
+                                    }
+                     },
+                     {
+                         "type":  "ClickCatcherWidget",
+                         "name":  "PanelInputCatcherLowerRail",
+                         "fields":  {
+                                        "rect":  {
+                                                     "x":  1216,
+                                                     "y":  1370,
+                                                     "width":  26,
+                                                     "height":  137
+                                                 }
+                                    }
+                     },
+                     {
+                         "type":  "RectangleWidget",
+                         "name":  "MonsterContent",
+                         "fields":  {
+                                        "rect":  {
+                                                     "x":  0,
+                                                     "y":  0,
+                                                     "width":  1320,
+                                                     "height":  1507
+                                                 },
+                                        "color":  [
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      0
+                                                  ],
+                                        "visible":  true
+                                    },
+                         "children":  [
+                                          {
+                                              "type":  "TextBoxWidget",
+                                              "name":  "SearchLabel",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  132,
+                                                                          "y":  164,
+                                                                          "width":  150,
+                                                                          "height":  76
+                                                                      },
+                                                             "text":  "SEARCH",
+                                                             "style":  {
+                                                                           "fontColor":  "$FontColorGoldYellow",
+                                                                           "pointSize":  "$SmallFontSize",
+                                                                           "alignment":  {
+                                                                                             "h":  "left",
+                                                                                             "v":  "center"
+                                                                                         },
+                                                                           "dropShadow":  "$DefaultDropShadow"
+                                                                       }
+                                                         }
+                                          },
+                                          {
+                                              "type":  "ImageWidget",
+                                              "name":  "SearchBackground",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  300,
+                                                                          "y":  150,
+                                                                          "width":  900,
+                                                                          "height":  104
+                                                                      },
+                                                             "filename":  "d2rloader/monster-kill-counter/input_slot"
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "TextBoxWidget",
+                                                                   "name":  "SearchInput",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  50,
+                                                                                               "y":  6,
+                                                                                               "width":  810,
+                                                                                               "height":  76
+                                                                                           },
+                                                                                  "text":  "TYPE TO SEARCH",
+                                                                                  "style":  {
+                                                                                                "fontColor":  "$FontColorGray",
+                                                                                                "pointSize":  "$SmallFontSize",
+                                                                                                "fontFace":  "BlizzardGlobal",
+                                                                                                "alignment":  {
+                                                                                                                  "h":  "left",
+                                                                                                                  "v":  "center"
+                                                                                                              }
+                                                                                            },
+                                                                                  "truncateWithEllipsis":  true
+                                                                              }
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "RectangleWidget",
+                                              "name":  "SearchFocusIndicator",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  350,
+                                                                          "y":  241,
+                                                                          "width":  810,
+                                                                          "height":  3
+                                                                      },
+                                                             "color":  [
+                                                                           0.78,
+                                                                           0.66,
+                                                                           0.4,
+                                                                           0.95
+                                                                       ],
+                                                             "visible":  false
+                                                         }
+                                          },
+                                          {
+                                              "type":  "RectangleWidget",
+                                              "name":  "TotalKillsPlate",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  276,
+                                                                          "width":  1104,
+                                                                          "height":  60
+                                                                      },
+                                                             "color":  [
+                                                                           0.012,
+                                                                           0.012,
+                                                                           0.012,
+                                                                           0.34
+                                                                       ]
+                                                         }
+                                          },
+                                          {
+                                              "type":  "RectangleWidget",
+                                              "name":  "TotalKillsAccent",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  276,
+                                                                          "width":  5,
+                                                                          "height":  60
+                                                                      },
+                                                             "color":  [
+                                                                           0.56,
+                                                                           0.44,
+                                                                           0.22,
+                                                                           0.72
+                                                                       ]
+                                                         }
+                                          },
+                                          {
+                                              "type":  "TextBoxWidget",
+                                              "name":  "TotalKillsLabel",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  132,
+                                                                          "y":  276,
+                                                                          "width":  300,
+                                                                          "height":  60
+                                                                      },
+                                                             "text":  "TOTAL KILLS",
+                                                             "style":  {
+                                                                           "fontColor":  "$FontColorGoldYellow",
+                                                                           "pointSize":  "$SmallFontSize",
+                                                                           "alignment":  {
+                                                                                             "h":  "left",
+                                                                                             "v":  "center"
+                                                                                         },
+                                                                           "dropShadow":  "$DefaultDropShadow"
+                                                                       }
+                                                         }
+                                          },
+                                          {
+                                              "type":  "TextBoxWidget",
+                                              "name":  "TotalKillsValue",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  466,
+                                                                          "y":  276,
+                                                                          "width":  704,
+                                                                          "height":  60
+                                                                      },
+                                                             "text":  "0",
+                                                             "style":  {
+                                                                           "fontColor":  "$FontColorWhite",
+                                                                           "pointSize":  "$MediumFontSize",
+                                                                           "alignment":  {
+                                                                                             "h":  "right",
+                                                                                             "v":  "center"
+                                                                                         },
+                                                                           "dropShadow":  "$DefaultDropShadow"
+                                                                       }
+                                                         }
+                                          },
+                                          {
+                                              "type":  "RectangleWidget",
+                                              "name":  "MonsterFilters",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  356,
+                                                                          "width":  1110,
+                                                                          "height":  72
+                                                                      },
+                                                             "color":  [
+                                                                           0,
+                                                                           0,
+                                                                           0,
+                                                                           0
+                                                                       ]
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "MonsterFilterAll",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  210,
+                                                                                               "height":  70
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0,
+                                                                                                0,
+                                                                                                0,
+                                                                                                0
+                                                                                            ]
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "ButtonWidget",
+                                                                                        "name":  "MonsterFilterAllCheckbox",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  0,
+                                                                                                                    "y":  2,
+                                                                                                                    "width":  70,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "filename":  "Lobby\\CreateGame\\CreateGame_AdvancedCheckbox",
+                                                                                                       "pressedFrame":  1,
+                                                                                                       "disabledFrame":  2,
+                                                                                                       "hoveredFrame":  3,
+                                                                                                       "sound":  "cursor_menu_select_hd"
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "ImageWidget",
+                                                                                        "name":  "MonsterFilterAllSelected",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  0,
+                                                                                                                    "y":  2,
+                                                                                                                    "width":  70,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "filename":  "Lobby\\CreateGame\\CreateGame_AdvancedCheckbox",
+                                                                                                       "frame":  4,
+                                                                                                       "visible":  true
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "MonsterFilterAllLabel",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  82,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  128,
+                                                                                                                    "height":  70
+                                                                                                                },
+                                                                                                       "text":  "ALL",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$SmallFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               },
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "MonsterFilterNormal",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  220,
+                                                                                               "y":  0,
+                                                                                               "width":  250,
+                                                                                               "height":  70
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0,
+                                                                                                0,
+                                                                                                0,
+                                                                                                0
+                                                                                            ]
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "ButtonWidget",
+                                                                                        "name":  "MonsterFilterNormalCheckbox",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  0,
+                                                                                                                    "y":  2,
+                                                                                                                    "width":  70,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "filename":  "Lobby\\CreateGame\\CreateGame_AdvancedCheckbox",
+                                                                                                       "pressedFrame":  1,
+                                                                                                       "disabledFrame":  2,
+                                                                                                       "hoveredFrame":  3,
+                                                                                                       "sound":  "cursor_menu_select_hd"
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "ImageWidget",
+                                                                                        "name":  "MonsterFilterNormalSelected",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  0,
+                                                                                                                    "y":  2,
+                                                                                                                    "width":  70,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "filename":  "Lobby\\CreateGame\\CreateGame_AdvancedCheckbox",
+                                                                                                       "frame":  4,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "MonsterFilterNormalLabel",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  82,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  168,
+                                                                                                                    "height":  70
+                                                                                                                },
+                                                                                                       "text":  "NORMAL",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$SmallFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               },
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "MonsterFilterSuperUnique",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  480,
+                                                                                               "y":  0,
+                                                                                               "width":  350,
+                                                                                               "height":  70
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0,
+                                                                                                0,
+                                                                                                0,
+                                                                                                0
+                                                                                            ]
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "ButtonWidget",
+                                                                                        "name":  "MonsterFilterSuperUniqueCheckbox",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  0,
+                                                                                                                    "y":  2,
+                                                                                                                    "width":  70,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "filename":  "Lobby\\CreateGame\\CreateGame_AdvancedCheckbox",
+                                                                                                       "pressedFrame":  1,
+                                                                                                       "disabledFrame":  2,
+                                                                                                       "hoveredFrame":  3,
+                                                                                                       "sound":  "cursor_menu_select_hd"
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "ImageWidget",
+                                                                                        "name":  "MonsterFilterSuperUniqueSelected",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  0,
+                                                                                                                    "y":  2,
+                                                                                                                    "width":  70,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "filename":  "Lobby\\CreateGame\\CreateGame_AdvancedCheckbox",
+                                                                                                       "frame":  4,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "MonsterFilterSuperUniqueLabel",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  82,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  268,
+                                                                                                                    "height":  70
+                                                                                                                },
+                                                                                                       "text":  "SUPER UNIQUE",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  22,
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               },
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "MonsterFilterBoss",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  840,
+                                                                                               "y":  0,
+                                                                                               "width":  270,
+                                                                                               "height":  70
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0,
+                                                                                                0,
+                                                                                                0,
+                                                                                                0
+                                                                                            ]
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "ButtonWidget",
+                                                                                        "name":  "MonsterFilterBossCheckbox",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  0,
+                                                                                                                    "y":  2,
+                                                                                                                    "width":  70,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "filename":  "Lobby\\CreateGame\\CreateGame_AdvancedCheckbox",
+                                                                                                       "pressedFrame":  1,
+                                                                                                       "disabledFrame":  2,
+                                                                                                       "hoveredFrame":  3,
+                                                                                                       "sound":  "cursor_menu_select_hd"
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "ImageWidget",
+                                                                                        "name":  "MonsterFilterBossSelected",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  0,
+                                                                                                                    "y":  2,
+                                                                                                                    "width":  70,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "filename":  "Lobby\\CreateGame\\CreateGame_AdvancedCheckbox",
+                                                                                                       "frame":  4,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "MonsterFilterBossLabel",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  82,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  188,
+                                                                                                                    "height":  70
+                                                                                                                },
+                                                                                                       "text":  "BOSS",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$SmallFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "TextBoxWidget",
+                                              "name":  "MonsterColumn",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  112,
+                                                                          "y":  433,
+                                                                          "width":  800,
+                                                                          "height":  50
+                                                                      },
+                                                             "text":  "MONSTER",
+                                                             "style":  {
+                                                                           "fontColor":  "$FontColorGoldYellow",
+                                                                           "pointSize":  "$MediumFontSize",
+                                                                           "alignment":  {
+                                                                                             "h":  "left",
+                                                                                             "v":  "center"
+                                                                                         },
+                                                                           "dropShadow":  "$DefaultDropShadow"
+                                                                       }
+                                                         }
+                                          },
+                                          {
+                                              "type":  "TextBoxWidget",
+                                              "name":  "KillsColumn",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  944,
+                                                                          "y":  433,
+                                                                          "width":  250,
+                                                                          "height":  50
+                                                                      },
+                                                             "text":  "KILLS",
+                                                             "style":  {
+                                                                           "fontColor":  "$FontColorGoldYellow",
+                                                                           "pointSize":  "$MediumFontSize",
+                                                                           "alignment":  {
+                                                                                             "h":  "right",
+                                                                                             "v":  "center"
+                                                                                         },
+                                                                           "dropShadow":  "$DefaultDropShadow"
+                                                                       }
+                                                         }
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_0",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  486,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_0",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_0",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_0",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_1",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  554,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_1",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_1",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_1",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_2",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  622,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_2",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_2",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_2",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_3",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  690,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_3",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_3",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_3",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_4",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  758,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_4",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_4",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_4",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_5",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  826,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_5",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_5",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_5",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_6",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  894,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_6",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_6",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_6",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_7",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  962,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_7",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_7",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_7",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_8",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  1030,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_8",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_8",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_8",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_9",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  1098,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_9",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_9",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_9",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_10",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  1166,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_10",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_10",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_10",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_11",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  1234,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_11",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_11",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_11",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "Widget",
+                                              "name":  "RowSlot_12",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  1302,
+                                                                          "width":  1104,
+                                                                          "height":  66
+                                                                      },
+                                                             "visible":  false
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "RectangleWidget",
+                                                                   "name":  "BodySlot_12",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1104,
+                                                                                               "height":  66
+                                                                                           },
+                                                                                  "color":  [
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.018,
+                                                                                                0.66
+                                                                                            ],
+                                                                                  "visible":  false
+                                                                              },
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "NameSlot_12",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  22,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  810,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorLightGold",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "left",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "truncateWithEllipsis":  true,
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    },
+                                                                                    {
+                                                                                        "type":  "TextBoxWidget",
+                                                                                        "name":  "CountSlot_12",
+                                                                                        "fields":  {
+                                                                                                       "rect":  {
+                                                                                                                    "x":  858,
+                                                                                                                    "y":  0,
+                                                                                                                    "width":  202,
+                                                                                                                    "height":  66
+                                                                                                                },
+                                                                                                       "text":  "0",
+                                                                                                       "style":  {
+                                                                                                                     "fontColor":  "$FontColorWhite",
+                                                                                                                     "pointSize":  "$MediumFontSize",
+                                                                                                                     "alignment":  {
+                                                                                                                                       "h":  "right",
+                                                                                                                                       "v":  "center"
+                                                                                                                                   },
+                                                                                                                     "dropShadow":  "$DefaultDropShadow"
+                                                                                                                 },
+                                                                                                       "visible":  false
+                                                                                                   }
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "ScrollViewWidget",
+                                              "name":  "MonsterScrollView",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  104,
+                                                                          "y":  486,
+                                                                          "width":  1104,
+                                                                          "height":  884
+                                                                      },
+                                                             "scrollControllerName":  "MonsterScrollController"
+                                                         },
+                                              "children":  [
+                                                               {
+                                                                   "type":  "Widget",
+                                                                   "name":  "MonsterScrollExtent",
+                                                                   "fields":  {
+                                                                                  "rect":  {
+                                                                                               "x":  0,
+                                                                                               "y":  0,
+                                                                                               "width":  1,
+                                                                                               "height":  884
+                                                                                           }
+                                                                              }
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "type":  "RectangleWidget",
+                                              "name":  "MonsterScrollTrack",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  1216,
+                                                                          "y":  486,
+                                                                          "width":  26,
+                                                                          "height":  884
+                                                                      },
+                                                             "color":  [
+                                                                           0.018,
+                                                                           0.017,
+                                                                           0.015,
+                                                                           0.72
+                                                                       ]
+                                                         }
+                                          },
+                                          {
+                                              "type":  "RectangleWidget",
+                                              "name":  "MonsterScrollHit",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  1216,
+                                                                          "y":  486,
+                                                                          "width":  26,
+                                                                          "height":  884
+                                                                      },
+                                                             "color":  [
+                                                                           0,
+                                                                           0,
+                                                                           0,
+                                                                           0
+                                                                       ]
+                                                         }
+                                          },
+                                          {
+                                              "type":  "ScrollControllerWidget",
+                                              "name":  "MonsterScrollController",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  1216,
+                                                                          "y":  486,
+                                                                          "width":  26,
+                                                                          "height":  884
+                                                                      },
+                                                             "upArrowFilepath":  "FrontEnd\\HD\\Final\\FrontEnd_ScrollUpBtn",
+                                                             "downArrowFilepath":  "FrontEnd\\HD\\Final\\FrontEnd_ScrollDownBtn",
+                                                             "barFilepath":  "FrontEnd\\HD\\Final\\FrontEnd_ScrollIndicator",
+                                                             "viewName":  "MonsterScrollView",
+                                                             "buttonScrollAmount":  68,
+                                                             "wheelScrollSound":  "cursor_scroll_hd",
+                                                             "buttonScrollSound":  "cursor_scroll_hd"
+                                                         }
+                                          }
+                                      ]
+                     },
+                     {
+                         "type":  "RectangleWidget",
+                         "name":  "MonsterTabHit",
+                         "fields":  {
+                                        "rect":  {
+                                                     "x":  380,
+                                                     "y":  58,
+                                                     "width":  560,
+                                                     "height":  88
+                                                 },
+                                        "color":  [
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      0
+                                                  ]
+                                    }
+                     },
+                     {
+                         "type":  "Widget",
+                         "name":  "CounterTabs",
+                         "fields":  {
+                                        "rect":  {
+                                                     "x":  380,
+                                                     "y":  58,
+                                                     "width":  560,
+                                                     "height":  88
+                                                 }
+                                    },
+                         "children":  [
+                                          {
+                                              "type":  "ImageWidget",
+                                              "name":  "MonsterTabActive",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  0,
+                                                                          "y":  0,
+                                                                          "width":  560,
+                                                                          "height":  88
+                                                                      },
+                                                             "filename":  "d2rloader/monster-kill-counter/tab_bar",
+                                                             "frame":  1
+                                                         }
+                                          },
+                                          {
+                                              "type":  "TextBoxWidget",
+                                              "name":  "MonsterTabLabelActive",
+                                              "fields":  {
+                                                             "rect":  {
+                                                                          "x":  0,
+                                                                          "y":  0,
+                                                                          "width":  560,
+                                                                          "height":  88
+                                                                      },
+                                                             "text":  "MONSTER KILL COUNTER",
+                                                             "style":  {
+                                                                           "fontColor":  "$TabsActiveTextColor",
+                                                                           "pointSize":  "$SmallFontSize",
+                                                                           "alignment":  {
+                                                                                             "h":  "center",
+                                                                                             "v":  "center"
+                                                                                         },
+                                                                           "dropShadow":  "$DefaultDropShadow"
+                                                                       }
+                                                         }
+                                          }
+                                      ]
+                     },
+                     {
+                         "type":  "ButtonWidget",
+                         "name":  "CloseButton",
+                         "fields":  {
+                                        "rect":  {
+                                                     "x":  1228,
+                                                     "y":  22,
+                                                     "width":  84,
+                                                     "height":  84
+                                                 },
+                                        "filename":  "PANEL\\closebtn_4x",
+                                        "hoveredFrame":  3,
+                                        "onClickMessage":  "PanelManager:ClosePanel:monster-kill-counter/MonsterKillCounterOnlyPanel",
+                                        "tooltipString":  "@strClose",
+                                        "sound":  "cursor_close_window_hd",
+                                        "acceptsEscKeyEverywhere":  true
+                                    }
+                     }
+                 ]
+}

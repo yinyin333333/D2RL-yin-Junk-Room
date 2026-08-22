@@ -1,0 +1,9 @@
+# The Controls menu owns the panel hotkey. default is not key binding.
+
+# Accepted values: numeric stable key, MonStats Id, or an unambiguous display alias.
+# Unknown or ambiguous values are warned about and ignored.
+# excluded_monsters means exactly what it says: monsters that should be excluded. Here’s an example.
+# excluded_monsters = ["zombie1", "fallen1", "andariel", "Bishibosh"]
+[monster_kill_counter]
+rewards_enabled = false
+excluded_monsters = []
