@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Disable Legacy Local Blood Censorship",
+  "description": "Disables Korean legacy blood palette replacement.",
+  "patches": [
+    {
+      "description": "Force local blood censorship gate off",
+      "op": "bytes",
+      "rva": "0x8A680",
+      "expected": "8B 05 72 90 99 02 C3",
+      "bytes": "31 C0 C3 90 90 90 90"
+    }
+  ]
+}
