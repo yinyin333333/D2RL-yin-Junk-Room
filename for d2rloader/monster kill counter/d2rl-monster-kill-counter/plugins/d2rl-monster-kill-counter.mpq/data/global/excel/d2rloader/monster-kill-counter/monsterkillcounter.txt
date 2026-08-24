@@ -4,3 +4,4 @@ duriel	10	r09
 mephisto	10	r10																																																																																						
 diablo	10	r11																																																																																						
 baalcrab	10	r12																																																																																						
+total	15	r30,qty=3																																																																																						
