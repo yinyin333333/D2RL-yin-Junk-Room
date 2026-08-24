@@ -1,5 +1,5 @@
 plugins
-d2rloader\plugins\d2rl-weapon-class-descriptors.dllr.dll
+d2rloader\plugins\d2rl-weapon-class-descriptors.dll
 d2rloader\plugins\d2rl-weapon-class-descriptors.mpq
 
 Let me give you an example.
