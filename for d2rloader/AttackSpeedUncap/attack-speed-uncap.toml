@@ -1,0 +1,10 @@
+[features]
+# Removes the shared 175/250 attack-rate clamp and Whirlwind's duplicate clamp.
+# The shared game branch also supplies the current Werewolf/Werebear attack curve.
+attack_speed = true
+
+# Removes the 175 cast-rate clamp for player/monster cast modes and cast sequences.
+cast_speed = true
+
+# Replaces Werewolf/Werebear A1/A2 timing with the uncapped legacy weapon-duration path.
+druid_wereforms = true
