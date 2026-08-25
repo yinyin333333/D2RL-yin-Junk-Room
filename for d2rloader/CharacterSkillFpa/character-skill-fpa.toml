@@ -1,0 +1,14 @@
+# Character Skill FPA standalone overlay
+# No Floating Damage or other overlay plugin is required.
+
+[overlay]
+enabled = true
+horizontal_position_percent = 50.0
+vertical_position_percent = 12.0
+text_size = 42.0
+scale_with_resolution = true
+display_seconds = 1.5
+decimal_places = 2
+color = [1.0, 0.82, 0.22, 1.0]
+outline_color = [0.02, 0.02, 0.02, 0.95]
+outline_width = 1.5
