@@ -28,6 +28,12 @@ show-aura-skill-and-level = true
 # {color:ID} changes the color of following literal text such as P:, /, |, or •.
 # Resistance values keep the individual colors configured below.
 resistance-template = "{fire}{color:0} • {lightning}{color:0} • {cold}{color:0} • {poison}{color:0} • {magic}{color:0} • {physical}"
+# Minimum effective resistance shown by Monster Display.
+# Keep -100 for normal game behavior. When ResistanceFloor changes [monsters],
+# set this to the same minimum_resistance value (for example -1000).
+# Values greater than -100 are invalid and fall back to -100.
+
+minimum-displayed-resistance = -100
 
 # Default color for literal text without a preceding {color:ID} directive.
 resistance-separator-color = 0
