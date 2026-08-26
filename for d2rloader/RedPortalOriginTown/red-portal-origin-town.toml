@@ -6,5 +6,11 @@ schema_version = 1
 # Destinations not listed here are unrestricted.
 
 [red_portal_origin_acts]
-# 39 = 4
-# 137 = 2
+# 139 = 4
+# 143 = 0
+
+# Red Portal destination level ID = required quest flag code.
+# A player may use the portal after state bit 0 or 15 is set for this quest.
+# Quest flag codes must be in the range 0..41
+[red_portal_required_quest_flags]
+# 38 = 1
