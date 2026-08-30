@@ -1,0 +1,12 @@
+schema_version = 1
+
+[vis_quest_flag]
+# true: apply Levels.txt QuestFlag/QuestFlagEx to every Vis destination.
+# false: apply it only to destination level IDs listed in levels.
+all_levels = false
+
+# Example: levels = [38, 39, 132]
+# Restart the game after changing this file.
+levels = [38]
+
+denied_feedback = true
