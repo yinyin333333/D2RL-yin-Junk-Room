@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Preserve Transform Between Acts",
+  "description": "Prevents act changes from removing player transformation states.",
+  "patches": [
+    {
+      "description": "Skip transform-state removal during act change",
+      "op": "nop",
+      "rva": "0x487E38",
+      "size": 5,
+      "expected": "E8 E3 2D EB FF"
+    }
+  ]
+}
