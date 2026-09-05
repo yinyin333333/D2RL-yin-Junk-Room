@@ -1,0 +1,20 @@
+# MonsterDeathPortal
+# Restart D2RLoader after changing this file.
+#
+# Format: "monster name" = destination level ID (1..255).
+# The destination can be in any act.
+#
+# [superuniques]: use the "Superunique" column from superuniques.txt.
+# [monstats]: use the "Id" column from monstats.txt.
+# Use these column values, not the names displayed in-game.
+# For the destination, use the "Id" column from levels.txt.
+#
+# If a monster matches both sections, [superuniques] takes priority.
+# Uncomment an example to enable it, or add your own entry.
+
+[superuniques]
+# "Rakanishu" = 132
+# "Corpsefire" = 39
+
+[monstats]
+# "zombie1" = 39
