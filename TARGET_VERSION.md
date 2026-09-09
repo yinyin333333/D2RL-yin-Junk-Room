@@ -1,1 +1,1 @@
-d2rloader 1.2.1
+d2rloader 1.3.0
