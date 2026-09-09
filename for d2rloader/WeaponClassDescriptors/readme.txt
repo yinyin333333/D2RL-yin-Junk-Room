@@ -1,2 +1,0 @@
-plugins
-d2rloader\plugins\WeaponClassDescriptors.dll
