@@ -1,5 +1,5 @@
 [multi-mercenary]
-# Includes the vanilla first mercenary. Valid range: 1..8.
+# Includes the vanilla first mercenary. Valid range: 1..5.
 maximum-mercenaries = 2
 
 # The two actions also appear in D2R's Controls menu and can be rebound there.
