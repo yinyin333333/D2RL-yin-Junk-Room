@@ -3,4 +3,3 @@ scep	WeaponDescScepter
 club	WeaponDescClub
 hamm	WeaponDescHammer
 mace	WeaponDescMace
-test	WeaponDescTest
