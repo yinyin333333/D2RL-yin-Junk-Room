@@ -1,0 +1,1457 @@
+[regression]
+enabled = true
+
+# 지정 NPC에게 "회귀" 대화가 나타날 최소 캐릭터 레벨입니다.
+required_level = 99
+
+# normal, nightmare, hell, any를 사용할 수 있습니다.
+allowed_difficulties = ["hell"]
+
+# 한 번의 회귀에서 뽑는 보상 행 수입니다.
+reward_count_min = 1
+reward_count_max = 1
+allow_duplicate_rolls = false
+
+# 대상 NPC의 숫자 MonStats ID입니다. 기본값 176은 Atma입니다. 메뉴 문자열은 자체 MPQ의 regression 네임스페이스에서 조회합니다.
+npc_class_id = 176
+
+
+# true이면 경험치·레벨·미사용 포인트 같은 진행 제어 스탯도 허용합니다.
+# 세이브를 망가뜨릴 수 있으므로 기본값은 false입니다.
+allow_unsafe_stats = false
+
+# stat_id는 현재 모드의 ItemStatCost/CASC 데이터에 존재해야 합니다.
+# value_shift=8은 생명력/마나처럼 8비트 고정소수점인 스탯에 사용합니다.
+
+# 아래 보상은 모두 활성화되어 가중치 추첨에 참여합니다. 기존 행의 수치/가중치는 유지합니다.
+# 신규 행의 1은 밸런스 권장값이 아니라 최소 양의 원시 스탯 단위입니다.
+# TXT 정의에 근거한 수치 보상 목록이며 각 효과의 실제 게임 동작을 모두 검증한 것은 아닙니다.
+# 회귀는 stat_id/layer별 단순 합산입니다. 상한이 있는 속성은 누적해도 효과가 더 늘지 않을 수 있습니다.
+# 개별 최소/최대 피해와 지속시간은 한 묶음으로 지급되지 않습니다. 필요한 관련 값은 따로 설정하세요.
+# 제외된 전체 행과 사유: reward-stat-audit.json
+
+# TXT Stat: strength | properties: str, all-stats
+[[reward]]
+name = "Strength"
+stat_id = 0
+minimum = 1
+maximum = 3
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: energy | properties: enr, all-stats
+[[reward]]
+name = "Energy"
+stat_id = 1
+minimum = 1
+maximum = 3
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: dexterity | properties: dex, all-stats
+[[reward]]
+name = "Dexterity"
+stat_id = 2
+minimum = 1
+maximum = 3
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: vitality | properties: vit, all-stats
+[[reward]]
+name = "Vitality"
+stat_id = 3
+minimum = 1
+maximum = 3
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: maxhp | properties: hp
+[[reward]]
+name = "Maximum Life"
+stat_id = 7
+minimum = 2
+maximum = 8
+weight = 60
+value_shift = 8
+layer = 0
+enabled = true
+
+# TXT Stat: maxmana | properties: mana
+[[reward]]
+name = "Maximum Mana"
+stat_id = 9
+minimum = 2
+maximum = 8
+weight = 60
+value_shift = 8
+layer = 0
+enabled = true
+
+# TXT Stat: maxstamina | properties: stam
+[[reward]]
+name = "maxstamina"
+stat_id = 11
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 8
+layer = 0
+enabled = true
+
+# TXT Stat: tohit | properties: att
+[[reward]]
+name = "tohit"
+stat_id = 19
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: toblock | properties: block
+[[reward]]
+name = "toblock"
+stat_id = 20
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: mindamage | properties: dmg-norm
+[[reward]]
+name = "mindamage"
+stat_id = 21
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: maxdamage | properties: dmg-norm
+[[reward]]
+name = "maxdamage"
+stat_id = 22
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: manarecoverybonus | properties: regen-mana
+[[reward]]
+name = "manarecoverybonus"
+stat_id = 27
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: staminarecoverybonus | properties: regen-stam
+[[reward]]
+name = "staminarecoverybonus"
+stat_id = 28
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: armorclass | properties: ac
+[[reward]]
+name = "armorclass"
+stat_id = 31
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: armorclass_vs_missile | properties: ac-miss
+[[reward]]
+name = "armorclass_vs_missile"
+stat_id = 32
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: armorclass_vs_hth | properties: ac-hth
+[[reward]]
+name = "armorclass_vs_hth"
+stat_id = 33
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: normal_damage_reduction | properties: red-dmg
+[[reward]]
+name = "normal_damage_reduction"
+stat_id = 34
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: magic_damage_reduction | properties: red-mag
+[[reward]]
+name = "magic_damage_reduction"
+stat_id = 35
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: damageresist | properties: red-dmg%
+[[reward]]
+name = "damageresist"
+stat_id = 36
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: magicresist | properties: res-mag
+[[reward]]
+name = "magicresist"
+stat_id = 37
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: maxmagicresist | properties: res-mag-max
+[[reward]]
+name = "maxmagicresist"
+stat_id = 38
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: fireresist | properties: res-fire, res-all
+[[reward]]
+name = "Fire Resist"
+stat_id = 39
+minimum = 1
+maximum = 3
+weight = 50
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: maxfireresist | properties: res-fire-max, res-all-max
+[[reward]]
+name = "maxfireresist"
+stat_id = 40
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: lightresist | properties: res-ltng, res-all
+[[reward]]
+name = "Lightning Resist"
+stat_id = 41
+minimum = 1
+maximum = 3
+weight = 50
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: maxlightresist | properties: res-ltng-max, res-all-max
+[[reward]]
+name = "maxlightresist"
+stat_id = 42
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: coldresist | properties: res-cold, res-all
+[[reward]]
+name = "Cold Resist"
+stat_id = 43
+minimum = 1
+maximum = 3
+weight = 50
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: maxcoldresist | properties: res-cold-max, res-all-max
+[[reward]]
+name = "maxcoldresist"
+stat_id = 44
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: poisonresist | properties: res-pois, res-all
+[[reward]]
+name = "Poison Resist"
+stat_id = 45
+minimum = 1
+maximum = 3
+weight = 50
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: maxpoisonresist | properties: res-pois-max, res-all-max
+[[reward]]
+name = "maxpoisonresist"
+stat_id = 46
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: firemindam | properties: fire-min, dmg-fire, dmg-elem, dmg-elem-min
+[[reward]]
+name = "firemindam"
+stat_id = 48
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: firemaxdam | properties: fire-max, dmg-fire, dmg-elem, dmg-elem-max
+[[reward]]
+name = "firemaxdam"
+stat_id = 49
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: lightmindam | properties: ltng-min, dmg-ltng, dmg-elem, dmg-elem-min
+[[reward]]
+name = "lightmindam"
+stat_id = 50
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: lightmaxdam | properties: ltng-max, dmg-ltng, dmg-elem, dmg-elem-max
+[[reward]]
+name = "lightmaxdam"
+stat_id = 51
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: magicmindam | properties: dmg-mag
+[[reward]]
+name = "magicmindam"
+stat_id = 52
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: magicmaxdam | properties: dmg-mag
+[[reward]]
+name = "magicmaxdam"
+stat_id = 53
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: coldmindam | properties: cold-min, dmg-cold, dmg-elem, dmg-elem-min
+[[reward]]
+name = "coldmindam"
+stat_id = 54
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: coldmaxdam | properties: cold-max, dmg-cold, dmg-elem, dmg-elem-max
+[[reward]]
+name = "coldmaxdam"
+stat_id = 55
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: coldlength | properties: cold-len, dmg-cold, dmg-elem, dmg-elem-max
+# 지속시간 원시 단위: 프레임. 다른 피해 스탯을 함께 고려하세요.
+[[reward]]
+name = "coldlength"
+stat_id = 56
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: poisonmindam | properties: pois-min, dmg-pois
+# 독 피해율 원시 단위. 표시 총 피해량을 직접 입력하는 항목이 아닙니다.
+[[reward]]
+name = "poisonmindam"
+stat_id = 57
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: poisonmaxdam | properties: pois-max, dmg-pois
+# 독 피해율 원시 단위. 표시 총 피해량을 직접 입력하는 항목이 아닙니다.
+[[reward]]
+name = "poisonmaxdam"
+stat_id = 58
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: poisonlength | properties: pois-len, dmg-pois
+# 지속시간 원시 단위: 프레임. 다른 피해 스탯을 함께 고려하세요.
+[[reward]]
+name = "poisonlength"
+stat_id = 59
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: lifedrainmindam | properties: lifesteal
+[[reward]]
+name = "lifedrainmindam"
+stat_id = 60
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: manadrainmindam | properties: manasteal
+[[reward]]
+name = "manadrainmindam"
+stat_id = 62
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: hpregen | properties: regen
+[[reward]]
+name = "hpregen"
+stat_id = 74
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_maxhp_percent | properties: hp%
+[[reward]]
+name = "item_maxhp_percent"
+stat_id = 76
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_maxmana_percent | properties: mana%
+[[reward]]
+name = "item_maxmana_percent"
+stat_id = 77
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_goldbonus | properties: gold%
+[[reward]]
+name = "item_goldbonus"
+stat_id = 79
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_magicbonus | properties: mag%
+[[reward]]
+name = "item_magicbonus"
+stat_id = 80
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_addexperience | properties: addxp
+[[reward]]
+name = "item_addexperience"
+stat_id = 85
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_reducedprices | properties: cheap
+[[reward]]
+name = "item_reducedprices"
+stat_id = 87
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_lightradius | properties: light
+[[reward]]
+name = "item_lightradius"
+stat_id = 89
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_fasterattackrate | properties: swing1, swing2, swing3
+[[reward]]
+name = "Increased Attack Speed"
+stat_id = 93
+minimum = 30
+maximum = 30
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_fastermovevelocity | properties: move1, move2, move3
+[[reward]]
+name = "item_fastermovevelocity"
+stat_id = 96
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_fastergethitrate | properties: balance1, balance2, balance3
+[[reward]]
+name = "item_fastergethitrate"
+stat_id = 99
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_fasterblockrate | properties: block1, block2, block3
+[[reward]]
+name = "item_fasterblockrate"
+stat_id = 102
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_fastercastrate | properties: cast1, cast2, cast3
+[[reward]]
+name = "item_fastercastrate"
+stat_id = 105
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_poisonlengthresist | properties: res-pois-len
+[[reward]]
+name = "item_poisonlengthresist"
+stat_id = 110
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_normaldamage | properties: dmg
+[[reward]]
+name = "item_normaldamage"
+stat_id = 111
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_ignoretargetac | properties: ignore-ac
+# 플래그형 속성: 값이 누적되어도 같은 효과가 배수로 증가하지 않습니다.
+[[reward]]
+name = "item_ignoretargetac"
+stat_id = 115
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_fractionaltargetac | properties: reduce-ac
+[[reward]]
+name = "item_fractionaltargetac"
+stat_id = 116
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_preventheal | properties: noheal
+# 플래그형 속성: 값이 누적되어도 같은 효과가 배수로 증가하지 않습니다.
+[[reward]]
+name = "item_preventheal"
+stat_id = 117
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_halffreezeduration | properties: half-freeze
+# 플래그형 속성: 값이 누적되어도 같은 효과가 배수로 증가하지 않습니다.
+[[reward]]
+name = "item_halffreezeduration"
+stat_id = 118
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_tohit_percent | properties: att%
+[[reward]]
+name = "item_tohit_percent"
+stat_id = 119
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_damagetargetac | properties: dmg-ac
+[[reward]]
+name = "item_damagetargetac"
+stat_id = 120
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_demondamage_percent | properties: dmg-demon
+[[reward]]
+name = "item_demondamage_percent"
+stat_id = 121
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_undeaddamage_percent | properties: dmg-undead
+[[reward]]
+name = "item_undeaddamage_percent"
+stat_id = 122
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_demon_tohit | properties: att-demon
+[[reward]]
+name = "item_demon_tohit"
+stat_id = 123
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_undead_tohit | properties: att-undead
+[[reward]]
+name = "item_undead_tohit"
+stat_id = 124
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_allskills | properties: allskills
+[[reward]]
+name = "item_allskills"
+stat_id = 127
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_kickdamage | properties: kick
+[[reward]]
+name = "item_kickdamage"
+stat_id = 137
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_deadlystrike | properties: deadly
+[[reward]]
+name = "item_deadlystrike"
+stat_id = 141
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_absorbfire_percent | properties: abs-fire%
+[[reward]]
+name = "item_absorbfire_percent"
+stat_id = 142
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_absorbfire | properties: abs-fire
+[[reward]]
+name = "item_absorbfire"
+stat_id = 143
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_absorblight_percent | properties: abs-ltng%
+[[reward]]
+name = "item_absorblight_percent"
+stat_id = 144
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_absorblight | properties: abs-ltng
+[[reward]]
+name = "item_absorblight"
+stat_id = 145
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_absorbmagic_percent | properties: abs-mag%
+[[reward]]
+name = "item_absorbmagic_percent"
+stat_id = 146
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_absorbmagic | properties: abs-mag
+[[reward]]
+name = "item_absorbmagic"
+stat_id = 147
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_absorbcold_percent | properties: abs-cold%
+[[reward]]
+name = "item_absorbcold_percent"
+stat_id = 148
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_absorbcold | properties: abs-cold
+[[reward]]
+name = "item_absorbcold"
+stat_id = 149
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_cannotbefrozen | properties: nofreeze
+# 플래그형 속성: 값이 누적되어도 같은 효과가 배수로 증가하지 않습니다.
+[[reward]]
+name = "item_cannotbefrozen"
+stat_id = 153
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_staminadrainpct | properties: stamdrain
+[[reward]]
+name = "item_staminadrainpct"
+stat_id = 154
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_pierce | properties: pierce
+[[reward]]
+name = "item_pierce"
+stat_id = 156
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_throw_mindamage | properties: dmg-throw
+[[reward]]
+name = "item_throw_mindamage"
+stat_id = 159
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_throw_maxdamage | properties: dmg-throw
+[[reward]]
+name = "item_throw_maxdamage"
+stat_id = 160
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_hp_perlevel | properties: hp/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=maxhp; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_hp_perlevel"
+stat_id = 216
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_mana_perlevel | properties: mana/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=maxmana; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_mana_perlevel"
+stat_id = 217
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_strength_perlevel | properties: str/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=strength; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_strength_perlevel"
+stat_id = 220
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_dexterity_perlevel | properties: dex/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=dexterity; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_dexterity_perlevel"
+stat_id = 221
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_energy_perlevel | properties: enr/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=energy; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_energy_perlevel"
+stat_id = 222
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_vitality_perlevel | properties: vit/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=vitality; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_vitality_perlevel"
+stat_id = 223
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_tohit_perlevel | properties: att/lvl
+# 레벨 연동 원시 계수. op param=1, 대상=tohit; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_tohit_perlevel"
+stat_id = 224
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_tohitpercent_perlevel | properties: att%/lvl
+# 레벨 연동 원시 계수. op param=1, 대상=item_tohit_percent; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_tohitpercent_perlevel"
+stat_id = 225
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_cold_damagemax_perlevel | properties: dmg-cold/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=coldmaxdam; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_cold_damagemax_perlevel"
+stat_id = 226
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_fire_damagemax_perlevel | properties: dmg-fire/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=firemaxdam; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_fire_damagemax_perlevel"
+stat_id = 227
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_ltng_damagemax_perlevel | properties: dmg-ltng/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=lightmaxdam; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_ltng_damagemax_perlevel"
+stat_id = 228
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_pois_damagemax_perlevel | properties: dmg-pois/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=poisonmaxdam; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_pois_damagemax_perlevel"
+stat_id = 229
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_resist_cold_perlevel | properties: res-cold/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=coldresist; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_resist_cold_perlevel"
+stat_id = 230
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_resist_fire_perlevel | properties: res-fire/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=fireresist; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_resist_fire_perlevel"
+stat_id = 231
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_resist_ltng_perlevel | properties: res-ltng/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=lightresist; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_resist_ltng_perlevel"
+stat_id = 232
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_resist_pois_perlevel | properties: res-pois/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=poisonresist; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_resist_pois_perlevel"
+stat_id = 233
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_absorb_cold_perlevel | properties: abs-cold/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=item_absorbcold; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_absorb_cold_perlevel"
+stat_id = 234
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_absorb_fire_perlevel | properties: abs-fire/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=item_absorbfire; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_absorb_fire_perlevel"
+stat_id = 235
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_absorb_ltng_perlevel | properties: abs-ltng/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=item_absorblight; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_absorb_ltng_perlevel"
+stat_id = 236
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_absorb_pois_perlevel | properties: abs-pois/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=item_absorbmagic; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_absorb_pois_perlevel"
+stat_id = 237
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_find_gold_perlevel | properties: gold%/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=item_goldbonus; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_find_gold_perlevel"
+stat_id = 239
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_find_magic_perlevel | properties: mag%/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=item_magicbonus; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_find_magic_perlevel"
+stat_id = 240
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_regenstamina_perlevel | properties: regen-stam/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=staminarecoverybonus; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_regenstamina_perlevel"
+stat_id = 241
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_stamina_perlevel | properties: stam/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=maxstamina; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_stamina_perlevel"
+stat_id = 242
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_damage_demon_perlevel | properties: dmg-dem/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=item_demondamage_percent; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_damage_demon_perlevel"
+stat_id = 243
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_damage_undead_perlevel | properties: dmg-und/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=item_undeaddamage_percent; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_damage_undead_perlevel"
+stat_id = 244
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_tohit_demon_perlevel | properties: att-dem/lvl
+# 레벨 연동 원시 계수. op param=1, 대상=item_demon_tohit; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_tohit_demon_perlevel"
+stat_id = 245
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_tohit_undead_perlevel | properties: att-und/lvl
+# 레벨 연동 원시 계수. op param=1, 대상=item_undead_tohit; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_tohit_undead_perlevel"
+stat_id = 246
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_kick_damage_perlevel | properties: kick/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=item_kickdamage; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_kick_damage_perlevel"
+stat_id = 249
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_deadlystrike_perlevel | properties: deadly/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=item_deadlystrike; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_deadlystrike_perlevel"
+stat_id = 250
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: passive_fire_mastery | properties: extra-fire, extra-skill-dmg%-rand
+[[reward]]
+name = "passive_fire_mastery"
+stat_id = 329
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: passive_ltng_mastery | properties: extra-ltng, extra-skill-dmg%-rand
+[[reward]]
+name = "passive_ltng_mastery"
+stat_id = 330
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: passive_cold_mastery | properties: extra-cold, extra-skill-dmg%-rand
+[[reward]]
+name = "passive_cold_mastery"
+stat_id = 331
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: passive_pois_mastery | properties: extra-pois, extra-skill-dmg%-rand
+[[reward]]
+name = "passive_pois_mastery"
+stat_id = 332
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: passive_fire_pierce | properties: pierce-fire
+[[reward]]
+name = "passive_fire_pierce"
+stat_id = 333
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: passive_ltng_pierce | properties: pierce-ltng
+[[reward]]
+name = "passive_ltng_pierce"
+stat_id = 334
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: passive_cold_pierce | properties: pierce-cold
+[[reward]]
+name = "passive_cold_pierce"
+stat_id = 335
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: passive_pois_pierce | properties: pierce-pois
+[[reward]]
+name = "passive_pois_pierce"
+stat_id = 336
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: passive_mag_mastery | properties: extra-skill-dmg%-rand, extra-mag
+[[reward]]
+name = "passive_mag_mastery"
+stat_id = 357
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: passive_mag_pierce | properties: pierce-mag
+[[reward]]
+name = "passive_mag_pierce"
+stat_id = 358
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: item_magic_damagemax_perlevel | properties: dmg-mag/lvl
+# 레벨 연동 원시 계수. op param=3, 대상=magicmaxdam; value_shift는 0으로 유지합니다.
+[[reward]]
+name = "item_magic_damagemax_perlevel"
+stat_id = 365
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+
+# TXT Stat: passive_dmg_pierce | properties: pierce-dmg
+[[reward]]
+name = "passive_dmg_pierce"
+stat_id = 366
+minimum = 1
+maximum = 1
+weight = 100
+value_shift = 0
+layer = 0
+enabled = true
+

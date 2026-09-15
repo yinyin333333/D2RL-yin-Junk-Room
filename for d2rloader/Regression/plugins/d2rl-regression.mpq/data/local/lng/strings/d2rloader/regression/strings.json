@@ -1,0 +1,36 @@
+[
+  {
+    "id": 65180,
+    "Key": "REGRESSION_NPC_ACTION",
+    "enUS": "Regression",
+    "zhTW": "回歸",
+    "deDE": "Regression",
+    "esES": "Regresión",
+    "frFR": "Régression",
+    "itIT": "Regressione",
+    "koKR": "회귀",
+    "plPL": "Regresja",
+    "esMX": "Regresión",
+    "jaJP": "回帰",
+    "ptBR": "Regressão",
+    "ruRU": "Регрессия",
+    "zhCN": "回归"
+  },
+  {
+    "id": 65181,
+    "Key": "REGRESSION_COUNT_LABEL",
+    "enUS": "Regression count",
+    "zhTW": "回歸次數",
+    "deDE": "Regressionen",
+    "esES": "Regresiones",
+    "frFR": "Régressions",
+    "itIT": "Regressioni",
+    "koKR": "회귀 횟수",
+    "plPL": "Liczba regresji",
+    "esMX": "Regresiones",
+    "jaJP": "回帰回数",
+    "ptBR": "Regressões",
+    "ruRU": "Число регрессий",
+    "zhCN": "回归次数"
+  }
+]
