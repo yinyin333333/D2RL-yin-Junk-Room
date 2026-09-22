@@ -1,6 +1,10 @@
 [multi-mercenary]
 # Includes the vanilla first mercenary. Valid range: 1..5.
 maximum-mercenaries = 5
+# Current employer stat controls the roster; automatic dismissal deletes equipment.
+stat-based-mercenary-limit = false
+# Block automatic quest mercenary rewards when true; false preserves existing behavior.
+quest-mercenary-rewards-deactive = true
 
 # The two actions also appear in D2R's Controls menu and can be rebound there.
 # Defaults: [ and ]
